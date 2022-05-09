@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15sp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_bg"
+            android:elevation="25dp"
+            android:padding="15dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ivAvatar"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:elevation="12dp"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                android:src="@drawable/avatar"
+                android:thicknessRatio="1.9"
+                app:cardCornerRadius="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@string/txt_image_description"
+                    android:src="@drawable/avatar" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvNameSub"
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/txt_name"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivAvatar" />
+
+            <TextView
+                android:id="@+id/tvAgeSub"
+                style="@style/subtitles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/txt_age"
+                app:layout_constraintStart_toStartOf="@id/tvNameSub"
+                app:layout_constraintTop_toBottomOf="@id/tvNameSub" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/txt_age_contact"
+                app:layout_constraintStart_toEndOf="@id/tvAgeSub"
+                app:layout_constraintTop_toTopOf="@id/tvAgeSub" />
+
+            <TextView
+                android:id="@+id/tvGender"
+                style="@style/subtitles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/txt_gender"
+                app:layout_constraintEnd_toStartOf="@id/txtGenderValue"
+                app:layout_constraintTop_toBottomOf="@id/tvNameSub" />
+
+            <TextView
+                android:id="@+id/txtGenderValue"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="30dp"
+                android:text="@string/txt_gender_contact"
+                app:layout_constraintEnd_toEndOf="@id/tvNameSub"
+                app:layout_constraintTop_toTopOf="@id/tvGender" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/layout_bg"
+            android:elevation="25dp"
+            android:padding="15dp">
+
+            <ImageView
+                android:id="@+id/ivIconMobile"
+                style="@style/icons"
+                android:contentDescription="@string/txt_icon_description"
+                android:src="@drawable/ic_mobile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMobileSub"
+                style="@style/subtitles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_mobile"
+                app:layout_constraintStart_toEndOf="@id/ivIconMobile"
+                app:layout_constraintTop_toTopOf="@id/ivIconMobile" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_mobile_number"
+                app:layout_constraintBottom_toBottomOf="@id/ivIconMobile"
+                app:layout_constraintStart_toStartOf="@id/tvMobileSub"
+                app:layout_constraintTop_toBottomOf="@id/tvMobileSub" />
+
+            <ImageView
+                android:id="@+id/ivIconPhone"
+                style="@style/icons"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/txt_icon_description"
+                android:src="@drawable/ic_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivIconMobile" />
+
+            <TextView
+                android:id="@+id/tvPhoneSub"
+                style="@style/subtitles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_phone"
+                app:layout_constraintStart_toEndOf="@id/ivIconPhone"
+                app:layout_constraintTop_toTopOf="@id/ivIconPhone" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_phone_number"
+                app:layout_constraintBottom_toBottomOf="@id/ivIconPhone"
+                app:layout_constraintStart_toStartOf="@id/tvPhoneSub"
+                app:layout_constraintTop_toBottomOf="@id/tvPhoneSub" />
+
+            <ImageView
+                android:id="@+id/ivIconEmail"
+                style="@style/icons"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/txt_icon_description"
+                android:src="@drawable/ic_email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivIconPhone" />
+
+            <TextView
+                android:id="@+id/tvEmailSub"
+                style="@style/subtitles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_email"
+                app:layout_constraintStart_toEndOf="@id/ivIconEmail"
+                app:layout_constraintTop_toTopOf="@id/ivIconEmail" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_email_address"
+                app:layout_constraintBottom_toBottomOf="@id/ivIconEmail"
+                app:layout_constraintStart_toStartOf="@id/tvEmailSub"
+                app:layout_constraintTop_toBottomOf="@id/tvEmailSub" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</ScrollView>

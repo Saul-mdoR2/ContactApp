@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ContactApp</string>
+    <string name="txt_image_description">Avatar del contacto</string>
+    <string name="txt_icon_description">Descripción del icono</string>
+    <string name="txt_mobile">Móvil</string>
+    <string name="txt_mobile_number">+52 861&#8211;116&#8211;76&#8211;60</string>
+    <string name="txt_phone">Teléfono</string>
+    <string name="txt_phone_number">+52 (861) 612&#8211;5404</string>
+    <string name="txt_email">Correo Electrónico</string>
+    <string name="txt_email_address">saul_99_27@hotmail.com</string>
+    <string name="txt_name">Héctor Saúl Maldonado Gómez</string>
+    <string name="txt_age">Edad</string>
+    <string name="txt_age_contact">22</string>
+    <string name="txt_gender_contact">Masculino</string>
+    <string name="txt_gender">Género</string>
+</resources>
