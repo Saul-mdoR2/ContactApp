@@ -14,4 +14,19 @@
     <string name="txt_age_contact">22</string>
     <string name="txt_gender_contact">Masculino</string>
     <string name="txt_gender">Género</string>
+    <string name="txt_street">Calle</string>
+    <string name="txt_address">Dirección</string>
+    <string name="txt_intNumber">Número Interior</string>
+    <string name="txt_extNumber">Número Exterior</string>
+    <string name="txt_suburb">Colonia</string>
+    <string name="txt_city">Ciudad</string>
+    <string name="txt_state">Estado</string>
+    <string name="txt_country">País</string>
+    <string name="txt_zip_code">Código Postal</string>
+    <string name="title_toolbar">Contacto</string>
+    <string name="txt_save_address">Guardar dirección</string>
+    <string name="txt_change_background">Cambiar color</string>
+    <string name="txt_settings">Configuración</string>
+    <string name="txt_color">Color (Hex)</string>
+    <string name="txt_error_change_background">El fondo no pudo ser modificado, ingrese un color valido</string>
 </resources>

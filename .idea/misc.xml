@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/saulm/Desktop/ContactApp/app/src/main/res/drawable/border.xml" value="0.2315" />
         <entry key="..\:/Users/saulm/Desktop/ContactApp/app/src/main/res/drawable/ic_email.xml" value="0.2315" />
         <entry key="..\:/Users/saulm/Desktop/ContactApp/app/src/main/res/drawable/ic_mobile.xml" value="0.2315" />
         <entry key="..\:/Users/saulm/Desktop/ContactApp/app/src/main/res/drawable/ic_phone.xml" value="0.2315" />
+        <entry key="..\:/Users/saulm/Desktop/ContactApp/app/src/main/res/drawable/ic_slider.xml" value="0.2315" />
         <entry key="..\:/Users/saulm/Desktop/ContactApp/app/src/main/res/drawable/layout_bg.xml" value="0.2315" />
-        <entry key="..\:/Users/saulm/Desktop/ContactApp/app/src/main/res/layout/activity_main.xml" value="0.4939271255060729" />
+        <entry key="..\:/Users/saulm/Desktop/ContactApp/app/src/main/res/layout-es/address_activity_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/saulm/Desktop/ContactApp/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/saulm/Desktop/ContactApp/app/src/main/res/layout/address_activity_layout.xml" value="0.4" />
       </map>
     </option>
   </component>
