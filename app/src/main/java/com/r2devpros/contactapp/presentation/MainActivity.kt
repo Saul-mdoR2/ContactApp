@@ -12,14 +12,32 @@ import androidx.core.graphics.toColorInt
 import com.r2devpros.contactapp.R
 import com.r2devpros.contactapp.model.Person
 import com.r2devpros.contactapp.utils.PERSON_TAG
+import com.r2devpros.contactapp.utils.getSavedColor
+import com.r2devpros.contactapp.utils.removeColor
+import com.r2devpros.contactapp.utils.saveColor
+
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var btnAddress: Button
+    private lateinit var btnChangeBackground: Button
+    private lateinit var btnResetBackgroung: Button
+    private lateinit var etColorHex: EditText
+    private lateinit var mainLayout: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d("MainActivity_TAG", "onCreate: ")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initViews()
+    }
+
+    override fun onResume() {
+        Log.d("MainActivity_TAG", "onResume: ")
+        super.onResume()
+        val colorInt = getSavedColor(this)
+        if (colorInt != 0)
+            mainLayout.setBackgroundColor(colorInt)
     }
 
     private fun initViews() {
@@ -34,22 +52,39 @@ class MainActivity : AppCompatActivity() {
             "saul_99_27@hotmail.com"
         )
 
-        findViewById<Button>(R.id.btnAddress).setOnClickListener {
+        btnAddress = findViewById(R.id.btnAddress)
+        btnChangeBackground = findViewById(R.id.btnBackground)
+        btnResetBackgroung = findViewById(R.id.btnResetColor)
+        etColorHex = findViewById(R.id.etColorHex)
+        mainLayout = findViewById(R.id.mainLayout)
+
+        btnAddress.setOnClickListener {
             navigateAddress(person)
         }
 
-        findViewById<Button>(R.id.btnBackground).setOnClickListener {
-            try {
-                val colorHex = "#${findViewById<EditText>(R.id.etColorHex).text}"
-                val colorInt = colorHex.toColorInt()
-                findViewById<LinearLayout>(R.id.mainLayout).setBackgroundColor(colorInt)
-            } catch (ex: Exception) {
-                Toast.makeText(
-                    this,
-                    getString(R.string.txt_error_change_background),
-                    Toast.LENGTH_LONG
-                ).show()
-            }
+        btnChangeBackground.setOnClickListener {
+            setColorBackground()
+        }
+
+        btnResetBackgroung.setOnClickListener {
+            removeColor(this@MainActivity)
+            mainLayout.setBackgroundColor(getColor(R.color.background))
+        }
+    }
+
+    private fun setColorBackground() {
+        Log.d("MainActivity_TAG", "setColorBackground: ")
+        try {
+            val colorHex = "#${etColorHex.text}"
+            val colorInt = colorHex.toColorInt()
+            saveColor(this, colorInt)
+            mainLayout.setBackgroundColor(colorInt)
+        } catch (ex: Exception) {
+            Toast.makeText(
+                this,
+                getString(R.string.txt_error_change_background),
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 
@@ -60,7 +95,6 @@ class MainActivity : AppCompatActivity() {
                 putParcelable(PERSON_TAG, person)
             })
         }
-
         startActivity(intent)
     }
 }

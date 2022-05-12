@@ -29,4 +29,5 @@
     <string name="txt_settings">Configuración</string>
     <string name="txt_color">Color (Hex)</string>
     <string name="txt_error_change_background">El fondo no pudo ser modificado, ingrese un color valido</string>
+    <string name="txt_reset_background">Reestablecer fondo</string>
 </resources>
