@@ -29,4 +29,8 @@
     <string name="txt_color">Color (Hex)</string>
     <string name="txt_error_change_background">The background couldn\'t be changed, try a valid color</string>
     <string name="txt_reset_background">Reset background</string>
+    <string name="txt_no_image_selected">No image selected</string>
+    <string name="txt_new_contact">New contact</string>
+    <string name="txt_name_sub">Name</string>
+    <string name="txt_add">Add</string>
 </resources>

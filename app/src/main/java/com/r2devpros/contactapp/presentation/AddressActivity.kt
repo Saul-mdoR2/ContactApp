@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.r2devpros.contactapp.R
 import com.r2devpros.contactapp.model.Person
-import com.r2devpros.contactapp.utils.PERSON_TAG
+import com.r2devpros.contactapp.utils.NAME_TAG
 import com.r2devpros.contactapp.utils.getSavedColor
 
 @Suppress("DEPRECATION")
@@ -58,9 +58,9 @@ class AddressActivity : AppCompatActivity() {
         Log.d("AddressActivity_TAG", "getData: ")
         val extras = intent.extras
         if (extras != null) {
-            val person = extras.getParcelable<Person>(PERSON_TAG)
-            person?.let {
-                tvName.text = it.name
+            val name = extras.getString(NAME_TAG)
+            name?.let {
+                tvName.text = it
             }
         }
     }
