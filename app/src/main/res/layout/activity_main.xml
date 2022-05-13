@@ -284,7 +284,7 @@
                 android:padding="15dp">
 
                 <Button
-                    android:id="@+id/showLayoutData"
+                    android:id="@+id/btnShowLayoutData"
                     style="@style/buttons"
                     android:text="@string/txt_new_contact"
                     android:layout_gravity="center_horizontal"

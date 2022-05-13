@@ -3,6 +3,7 @@ package com.r2devpros.contactapp.presentation
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.toColorInt
@@ -47,6 +48,14 @@ class MainActivity : AppCompatActivity() {
         binding.btnResetColor.setOnClickListener {
             removeColor(this@MainActivity)
             binding.mainLayout.setBackgroundColor(getColor(R.color.background))
+        }
+
+        binding.btnShowLayoutData.setOnClickListener {
+            binding.layoutData.visibility = View.VISIBLE
+        }
+
+        binding.btnAddContact.setOnClickListener {
+            binding.layoutData.visibility = View.GONE
         }
     }
 
