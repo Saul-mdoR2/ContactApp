@@ -7,16 +7,25 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.toColorInt
+import androidx.lifecycle.MutableLiveData
+import androidx.room.Room
 import com.r2devpros.contactapp.R
 import com.r2devpros.contactapp.databinding.ActivityMainBinding
+import com.r2devpros.contactapp.model.Person
+import com.r2devpros.contactapp.repository.room.PersonDatabase
 import com.r2devpros.contactapp.utils.NAME_TAG
 import com.r2devpros.contactapp.utils.getSavedColor
 import com.r2devpros.contactapp.utils.removeColor
 import com.r2devpros.contactapp.utils.saveColor
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var db: PersonDatabase? = null
+    private val totalItems = MutableLiveData<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d("MainActivity_TAG", "onCreate: ")
@@ -24,6 +33,24 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initViews()
+
+        db = Room.databaseBuilder(
+            this,
+            PersonDatabase::class.java,
+            PersonDatabase.DATABASE_NAME
+        ).build()
+
+        CoroutineScope(Dispatchers.IO).launch {
+            totalItems.postValue(db?.personDao()?.getAll()?.count())
+        }
+
+        totalItems.observe(this) {
+            Toast.makeText(
+                applicationContext,
+                "Total contacts: $it",
+                Toast.LENGTH_LONG
+            ).show()
+        }
     }
 
     override fun onResume() {
@@ -55,6 +82,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnAddContact.setOnClickListener {
+            CoroutineScope(Dispatchers.IO).launch {
+                db?.personDao()?.insert(
+                    Person(
+                        0,
+                        "",
+                        binding.etNameValue.text.toString(),
+                        binding.etAge.text.toString().toInt(),
+                        binding.etGender.text.toString(),
+                        binding.etPhone.text.toString(),
+                        binding.etMobile.text.toString(),
+                        binding.etEmail.text.toString()
+                    )
+                )
+            }
             binding.layoutData.visibility = View.GONE
         }
     }

@@ -275,29 +275,29 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/layout_bg"
                 android:elevation="25dp"
+                android:orientation="vertical"
                 android:padding="15dp">
 
                 <Button
                     android:id="@+id/btnShowLayoutData"
                     style="@style/buttons"
-                    android:text="@string/txt_new_contact"
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/txt_new_contact" />
 
                 <LinearLayout
                     android:id="@+id/layoutData"
-                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
                     android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:visibility="gone">
 
                     <EditText
                         android:id="@+id/etNameValue"
@@ -311,10 +311,10 @@
 
                     <EditText
                         android:id="@+id/etAge"
-                        android:layout_marginTop="10dp"
                         style="@style/editTexts"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
                         android:hint="@string/txt_age"
                         android:importantForAutofill="no"
                         android:inputType="number"
@@ -322,10 +322,10 @@
 
                     <EditText
                         android:id="@+id/etGender"
-                        android:layout_marginTop="10dp"
                         style="@style/editTexts"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
                         android:hint="@string/txt_gender"
                         android:importantForAutofill="no"
                         android:inputType="text"
@@ -333,10 +333,10 @@
 
                     <EditText
                         android:id="@+id/etMobile"
-                        android:layout_marginTop="10dp"
                         style="@style/editTexts"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
                         android:hint="@string/txt_mobile"
                         android:importantForAutofill="no"
                         android:inputType="phone"
@@ -344,10 +344,10 @@
 
                     <EditText
                         android:id="@+id/etPhone"
-                        android:layout_marginTop="10dp"
                         style="@style/editTexts"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
                         android:hint="@string/txt_phone"
                         android:importantForAutofill="no"
                         android:inputType="phone"
@@ -355,10 +355,10 @@
 
                     <EditText
                         android:id="@+id/etEmail"
-                        android:layout_marginTop="10dp"
                         style="@style/editTexts"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
                         android:hint="@string/txt_email"
                         android:importantForAutofill="no"
                         android:inputType="textEmailAddress"
@@ -367,10 +367,10 @@
                     <Button
                         android:id="@+id/btnAddContact"
                         style="@style/buttons"
-                        android:text="@string/txt_add"
-                        android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/txt_add" />
 
                 </LinearLayout>
 

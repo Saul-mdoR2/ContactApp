@@ -7,4 +7,8 @@ import com.r2devpros.contactapp.model.Person
 @Database(entities = [Person::class], version = 1)
 abstract class PersonDatabase : RoomDatabase() {
     abstract fun personDao(): PersonDao
+
+    companion object {
+        const val DATABASE_NAME = "people_database"
+    }
 }
