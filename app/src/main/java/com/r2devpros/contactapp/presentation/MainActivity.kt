@@ -44,10 +44,10 @@ class MainActivity : AppCompatActivity() {
             totalItems.postValue(db?.personDao()?.getAll()?.count())
         }
 
-        totalItems.observe(this) {
+        totalItems.observe(this) { total ->
             Toast.makeText(
                 applicationContext,
-                "Total contacts: $it",
+                getString(R.string.txt_total_contacts, total.toString()),
                 Toast.LENGTH_LONG
             ).show()
         }
@@ -96,6 +96,12 @@ class MainActivity : AppCompatActivity() {
                     )
                 )
             }
+            binding.etNameValue.text.clear()
+            binding.etAge.text.clear()
+            binding.etGender.text.clear()
+            binding.etPhone.text.clear()
+            binding.etMobile.text.clear()
+            binding.etEmail.text.clear()
             binding.layoutData.visibility = View.GONE
         }
     }

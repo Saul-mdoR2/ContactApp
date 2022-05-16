@@ -33,4 +33,5 @@
     <string name="txt_new_contact">New contact</string>
     <string name="txt_name_sub">Name</string>
     <string name="txt_add">Add</string>
+    <string name="txt_total_contacts">Total contacts: %1$s</string>
 </resources>
