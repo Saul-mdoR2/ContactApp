@@ -1,197 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.AddressActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
-        android:id="@+id/mainLayout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/background"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        tools:context=".presentation.AddressActivity">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <LinearLayout
+            android:id="@+id/mainLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:background="@color/background"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvTitleToolbar"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="?android:attr/actionBarSize"
-                android:text="@string/title_toolbar"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-        </androidx.appcompat.widget.Toolbar>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="13dp"
-            android:background="@drawable/layout_bg"
-            android:elevation="25dp"
-            android:padding="15dp">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/ivAvatar"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_centerHorizontal="true"
-                android:elevation="12dp"
-                android:innerRadius="0dp"
-                android:shape="ring"
-                android:src="@drawable/avatar"
-                android:thicknessRatio="1.9"
-                app:cardCornerRadius="100dp"
+                android:layout_height="wrap_content"
+                android:elevation="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/imageView1"
+                <TextView
+                    android:id="@+id/tvTitleToolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:contentDescription="@string/txt_image_description"
-                    tools:src="@drawable/ic_launcher_background" />
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/tvNameSub"
-                style="@style/TextAppearance.Material3.TitleLarge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivAvatar"
-                tools:text="@string/txt_name" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
-            android:layout_marginEnd="13dp"
-            android:layout_marginBottom="13dp"
-            android:background="@drawable/layout_bg"
-            android:elevation="25dp"
-            android:orientation="vertical"
-            android:padding="25dp">
-
-            <EditText
-                style="@style/editTexts"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:hint="@string/txt_street"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                tools:ignore="LabelFor" />
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="?android:attr/actionBarSize"
+                    android:text="@string/title_toolbar"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </androidx.appcompat.widget.Toolbar>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp">
+                android:layout_margin="13dp"
+                android:background="@drawable/layout_bg"
+                android:elevation="25dp"
+                android:padding="15dp">
 
-                <EditText
-                    style="@style/editTexts"
-                    android:layout_width="wrap_content"
-                    android:layout_height="45dp"
-                    android:hint="@string/txt_intNumber"
-                    android:importantForAutofill="no"
-                    android:inputType="number"
-                    android:paddingStart="5dp"
-                    android:paddingEnd="5dp"
-                    android:textSize="13sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="LabelFor" />
-
-                <EditText
-                    style="@style/editTexts"
-                    android:layout_width="wrap_content"
-                    android:layout_height="45dp"
-                    android:hint="@string/txt_extNumber"
-                    android:importantForAutofill="no"
-                    android:inputType="number"
-                    android:paddingStart="5dp"
-                    android:paddingEnd="5dp"
-                    android:textSize="13sp"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ivAvatar"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerHorizontal="true"
+                    android:elevation="12dp"
+                    android:innerRadius="0dp"
+                    android:shape="ring"
+                    android:src="@drawable/avatar"
+                    android:thicknessRatio="1.9"
+                    app:cardCornerRadius="100dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="LabelFor" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:contentDescription="@string/txt_image_description"
+                        tools:src="@drawable/ic_launcher_background" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tvNameSub"
+                    style="@style/TextAppearance.Material3.TitleLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivAvatar"
+                    tools:text="@string/txt_name" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <EditText
-                android:id="@+id/etSuburb"
-                style="@style/editTexts"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="15dp"
-                android:hint="@string/txt_suburb"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                tools:ignore="LabelFor" />
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_marginBottom="13dp"
+                android:background="@drawable/layout_bg"
+                android:elevation="25dp"
+                android:orientation="vertical"
+                android:padding="25dp">
 
-            <EditText
-                style="@style/editTexts"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="15dp"
-                android:hint="@string/txt_city"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textColorHint="@color/light_gray"
-                tools:ignore="LabelFor" />
+                <TextView
+                    style="@style/subtitles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:text="@string/txt_address"
+                    android:textAllCaps="false"
+                    android:textSize="18sp" />
 
-            <EditText
-                style="@style/editTexts"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="15dp"
-                android:hint="@string/txt_state"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textColorHint="@color/light_gray"
-                tools:ignore="LabelFor" />
+                <EditText
+                    style="@style/editTexts"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:hint="@string/txt_street"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    tools:ignore="LabelFor" />
 
-            <EditText
-                style="@style/editTexts"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="15dp"
-                android:hint="@string/txt_country"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textColorHint="@color/light_gray"
-                tools:ignore="LabelFor" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
 
-            <EditText
-                style="@style/editTexts"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="15dp"
-                android:hint="@string/txt_zip_code"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:maxLength="5"
-                android:textColorHint="@color/light_gray"
-                tools:ignore="LabelFor" />
+                    <EditText
+                        style="@style/editTexts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:hint="@string/txt_intNumber"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:textSize="13sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        style="@style/editTexts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:hint="@string/txt_extNumber"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="LabelFor" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <EditText
+                    android:id="@+id/etSuburb"
+                    style="@style/editTexts"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
+                    android:hint="@string/txt_suburb"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    tools:ignore="LabelFor" />
+
+                <EditText
+                    style="@style/editTexts"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
+                    android:hint="@string/txt_city"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    tools:ignore="LabelFor" />
+
+                <EditText
+                    style="@style/editTexts"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
+                    android:hint="@string/txt_state"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    tools:ignore="LabelFor" />
+
+                <EditText
+                    style="@style/editTexts"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
+                    android:hint="@string/txt_country"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    tools:ignore="LabelFor" />
+
+                <EditText
+                    style="@style/editTexts"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
+                    android:hint="@string/txt_zip_code"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    tools:ignore="LabelFor" />
+
+            </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</layout>

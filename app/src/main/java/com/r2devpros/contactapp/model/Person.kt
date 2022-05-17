@@ -12,7 +12,7 @@ data class Person(
     @ColumnInfo(name = "image") val image: String,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "age") val age: Int,
-    @ColumnInfo(name = "genre") val genre: String,
+    @ColumnInfo(name = "gender") val gender: String,
     @ColumnInfo(name = "phone_number") val phoneNumber: String,
     @ColumnInfo(name = "mobile_number") val mobileNumber: String,
     @ColumnInfo(name = "email") val email: String
@@ -33,7 +33,7 @@ data class Person(
         parcel.writeString(image)
         parcel.writeString(name)
         parcel.writeInt(age)
-        parcel.writeString(genre)
+        parcel.writeString(gender)
         parcel.writeString(phoneNumber)
         parcel.writeString(mobileNumber)
         parcel.writeString(email)
@@ -44,7 +44,7 @@ data class Person(
     }
 
     companion object CREATOR : Parcelable.Creator<Person> {
-        const val TABLE_NAME = "Person"
+        const val TABLE_NAME = "People"
 
         override fun createFromParcel(parcel: Parcel): Person {
             return Person(parcel)

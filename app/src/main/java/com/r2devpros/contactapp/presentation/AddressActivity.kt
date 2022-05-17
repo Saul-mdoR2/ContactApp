@@ -2,26 +2,20 @@ package com.r2devpros.contactapp.presentation
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import com.r2devpros.contactapp.R
-import com.r2devpros.contactapp.model.Person
+import com.r2devpros.contactapp.databinding.AddressActivityLayoutBinding
 import com.r2devpros.contactapp.utils.NAME_TAG
 import com.r2devpros.contactapp.utils.getSavedColor
 
-@Suppress("DEPRECATION")
 class AddressActivity : AppCompatActivity() {
 
-    private lateinit var mainLayout: LinearLayout
-    private lateinit var toolbar: Toolbar
-    private lateinit var tvName: TextView
+    private lateinit var binding: AddressActivityLayoutBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d("AddressActivity_TAG", "onCreate: ")
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.address_activity_layout)
+        binding = AddressActivityLayoutBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         initViews()
         getData()
     }
@@ -31,23 +25,18 @@ class AddressActivity : AppCompatActivity() {
         super.onResume()
         val colorInt = getSavedColor(this)
         if (colorInt != 0)
-            mainLayout.setBackgroundColor(colorInt)
+            binding.mainLayout.setBackgroundColor(colorInt)
     }
 
     private fun initViews() {
         Log.d("AddressActivity_TAG", "initViews: ")
-
-        mainLayout = findViewById(R.id.mainLayout)
-        tvName = findViewById(R.id.tvNameSub)
-
         setUpToolbar()
     }
 
     private fun setUpToolbar() {
         Log.d("AddressActivity_TAG", "setUpToolbar: ")
-        toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        toolbar.setNavigationOnClickListener {
+        setSupportActionBar(binding.toolbar)
+        binding.toolbar.setNavigationOnClickListener {
             finish()
         }
         val actionbar = supportActionBar
@@ -60,7 +49,7 @@ class AddressActivity : AppCompatActivity() {
         if (extras != null) {
             val name = extras.getString(NAME_TAG)
             name?.let {
-                tvName.text = it
+                binding.tvNameSub.text = it
             }
         }
     }
