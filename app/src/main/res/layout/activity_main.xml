@@ -126,7 +126,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/txt_mobile"
                     app:layout_constraintStart_toEndOf="@id/ivIconMobile"
-                    app:layout_constraintTop_toTopOf="@id/ivIconMobile" />
+                    app:layout_constraintTop_toTopOf="@id/ivIconMobile"
+                    tools:ignore="TextContrastCheck" />
 
                 <TextView
                     style="@style/TextAppearance.AppCompat.Body1"
@@ -200,7 +201,8 @@
                     android:text="@string/txt_address"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ivIconEmail" />
+                    app:layout_constraintTop_toBottomOf="@id/ivIconEmail"
+                    tools:ignore="TextContrastCheck" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -233,13 +235,14 @@
                     android:text="@string/txt_color"
                     android:textAllCaps="false"
                     app:layout_constraintStart_toStartOf="@id/tvSettingsSub"
-                    app:layout_constraintTop_toBottomOf="@id/tvSettingsSub" />
+                    app:layout_constraintTop_toBottomOf="@id/tvSettingsSub"
+                    tools:ignore="TextContrastCheck" />
 
                 <EditText
                     android:id="@+id/etColorHex"
                     style="@style/editTexts"
                     android:layout_width="150dp"
-                    android:layout_height="30dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="15dp"
                     android:autofillHints="no"
                     android:inputType="textCapCharacters"
@@ -247,14 +250,14 @@
                     app:layout_constraintBottom_toBottomOf="@id/tvColorSub"
                     app:layout_constraintStart_toEndOf="@id/tvColorSub"
                     app:layout_constraintTop_toTopOf="@id/tvColorSub"
-                    tools:ignore="LabelFor" />
+                    tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 <Button
                     android:id="@+id/btnBackground"
                     style="@style/buttons"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="25dp"
                     android:text="@string/txt_change_background"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
